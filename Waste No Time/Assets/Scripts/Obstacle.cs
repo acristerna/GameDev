@@ -5,10 +5,10 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
     public int damage = 1;
+    [SerializeField] int health = 100;
     public float speed;
 
     public GameObject effect;
-    public GameObject explosionSound;
 
     private void Update()
     {
@@ -19,12 +19,23 @@ public class Obstacle : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Instantiate(explosionSound, transform.position, Quaternion.identity);
             Instantiate(effect, transform.position, Quaternion.identity);
             // player takes damage !
             other.GetComponent<Player>().health -= damage;
             Debug.Log(other.GetComponent<Player>().health);
             Destroy(gameObject);
         }
+        else
+        {
+            DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
+            health -= damageDealer.GetDamage();
+            if (health <= 0)
+            {
+                Instantiate(effect, transform.position, Quaternion.identity);
+                Destroy(gameObject);
+            }
+        }
+
+
     }
 }

@@ -94,11 +94,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1179a370e72fac4a824e547c1110694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  laserPrefab: {fileID: 6745319490580450811, guid: 4d7eb06a9aebe4cc7843cb04123cb862,
+    type: 3}
+  projectileSpeed: 10
+  projectileFiringPeriod: 0.1
   Yincrement: 1
   speed: 200
   maxHeight: 3
   minHeight: -4
   health: 3
+  healthDisplay: {fileID: 0}
+  gameOver: {fileID: 0}
 --- !u!60 &7123108989822264862
 PolygonCollider2D:
   m_ObjectHideFlags: 0
