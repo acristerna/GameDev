@@ -98,6 +98,8 @@ MonoBehaviour:
   health: 100
   speed: 4
   effect: {fileID: 1058715954, guid: ee8b56556e7277a4298c33abca9d0e8d, type: 3}
+  explostionSound: {fileID: 2139053895026421481, guid: 6134c56a13ef1584e8d048f75143f400,
+    type: 3}
 --- !u!60 &7132989378554137320
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -110,7 +112,7 @@ PolygonCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_UsedByComposite: 1
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}

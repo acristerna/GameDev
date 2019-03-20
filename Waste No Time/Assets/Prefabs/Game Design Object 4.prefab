@@ -95,9 +95,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  health: 100
   speed: 4
   effect: {fileID: 8014923613603275618, guid: f6fb9878ae86c9540a38fd86ced0ac64, type: 3}
-  explosionSound: {fileID: 2139053895026421481, guid: 6134c56a13ef1584e8d048f75143f400,
+  explostionSound: {fileID: 2139053895026421481, guid: 6134c56a13ef1584e8d048f75143f400,
     type: 3}
 --- !u!60 &4791533907134108271
 PolygonCollider2D:

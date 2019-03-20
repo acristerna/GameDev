@@ -10,7 +10,7 @@ public class ScoreManager : MonoBehaviour
 
     private void Update()
     {
-            scoreDisplay.text = score.ToString();
+            scoreDisplay.text = "Score: " + score.ToString();
     }
 
     void OnTriggerEnter2D(Collider2D other)

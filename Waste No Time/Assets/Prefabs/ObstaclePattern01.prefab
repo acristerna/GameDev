@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6452683993136764972}
   - component: {fileID: 8799972291545666107}
+  - component: {fileID: 266586384363332319}
   m_Layer: 0
   m_Name: SpawnPoint01
   m_TagString: Untagged
@@ -45,6 +46,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacle: {fileID: 7132989378554137321, guid: cbc1974048f6ef54295f58f3c435ed6c,
     type: 3}
+--- !u!114 &266586384363332319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6627440816118323966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca50b6a0fc80f7746a8ee1842f0b3f29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 10
 --- !u!1 &8908815736809261718
 GameObject:
   m_ObjectHideFlags: 0
@@ -55,6 +69,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3834808689971981176}
   - component: {fileID: 8886682256101591595}
+  - component: {fileID: 2632610811853033077}
   m_Layer: 0
   m_Name: SpawnPoint02
   m_TagString: Untagged
@@ -90,6 +105,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacle: {fileID: 4009580465192449031, guid: 7d726e8711071c14f8a12eb6f077d7af,
     type: 3}
+--- !u!114 &2632610811853033077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8908815736809261718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca50b6a0fc80f7746a8ee1842f0b3f29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 10
 --- !u!1 &9193466705184600988
 GameObject:
   m_ObjectHideFlags: 0

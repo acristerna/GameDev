@@ -9,6 +9,7 @@ public class Obstacle : MonoBehaviour
     public float speed;
 
     public GameObject effect;
+    public GameObject explostionSound;
 
     private void Update()
     {
@@ -19,6 +20,7 @@ public class Obstacle : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Instantiate(explostionSound, transform.position, Quaternion.identity);
             Instantiate(effect, transform.position, Quaternion.identity);
             // player takes damage !
             other.GetComponent<Player>().health -= damage;

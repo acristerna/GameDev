@@ -25,44 +25,44 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
+       // Move();
         Fire();
-        //healthDisplay.text = health.ToString();
+        healthDisplay.text = "Lives Left: " + health.ToString() ;
 
-        //if (health <= 0)
-        //{
-        //    gameOver.SetActive(true);
-        //    Destroy(gameObject);
-        //}
-        //transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
-
-        //if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < maxHeight)
-        //{
-        //    targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
-        //}
-        //else if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minHeight)
-        //{
-        //    targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
-        //}
-    }
-
-    private void Move()
-    {
         if (health <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            gameOver.SetActive(true);
+            Destroy(gameObject);
         }
         transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < maxHeight)
         {
-            targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
+          targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minHeight)
         {
             targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
         }
     }
+
+    //private void Move()
+    //{
+        //if (health <= 0)
+      //  {
+        //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+       // }
+        //transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
+
+      //  if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < maxHeight)
+       // {
+       //     targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
+       // }
+      //  else if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minHeight)
+       // {
+      //      targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
+      //  }
+    //}
 
     IEnumerator FireContinuously()
     {
