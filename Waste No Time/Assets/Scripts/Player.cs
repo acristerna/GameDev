@@ -46,30 +46,13 @@ public class Player : MonoBehaviour
         }
     }
 
-    //private void Move()
-    //{
-        //if (health <= 0)
-      //  {
-        //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-       // }
-        //transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
-
-      //  if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < maxHeight)
-       // {
-       //     targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
-       // }
-      //  else if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minHeight)
-       // {
-      //      targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
-      //  }
-    //}
-
     IEnumerator FireContinuously()
     {
         while (true)
         {
             GameObject laser = Instantiate(laserPrefab, transform.position, Quaternion.identity) as GameObject;
             laser.GetComponent<Rigidbody2D>().velocity = new Vector2(projectileSpeed, 0);
+
 
             yield return new WaitForSeconds(projectileFiringPeriod);
         }

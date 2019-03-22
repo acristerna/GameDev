@@ -29,6 +29,7 @@ public class Obstacle : MonoBehaviour
         }
         else
         {
+
             DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
             health -= damageDealer.GetDamage();
             if (health <= 0)
@@ -36,6 +37,8 @@ public class Obstacle : MonoBehaviour
                 Instantiate(effect, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
+            Destroy(other.gameObject);
+          
         }
 
 
