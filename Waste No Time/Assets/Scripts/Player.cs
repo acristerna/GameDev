@@ -13,9 +13,12 @@ public class Player : MonoBehaviour
     Coroutine firingCoroutine;
     private Vector2 targetPos;
     public float Yincrement;
+    public float Xincrement;
     public float speed;
     public float maxHeight;
     public float minHeight;
+    public float maxWidth;
+    public float minWidth;
 
     public int health = 3;
 
@@ -43,6 +46,17 @@ public class Player : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minHeight)
         {
             targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
+        }
+
+        transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
+
+        if (Input.GetKeyDown(KeyCode.RightArrow) && transform.position.x < maxWidth)
+        {
+            targetPos = new Vector2(transform.position.x + Xincrement, transform.position.y);
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftArrow) && transform.position.x > minWidth)
+        {
+            targetPos = new Vector2(transform.position.x - Xincrement, transform.position.y);
         }
     }
 
