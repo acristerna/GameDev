@@ -65,7 +65,7 @@ public class Player : MonoBehaviour
         while (true)
         {
             GameObject laser = Instantiate(laserPrefab, transform.position, Quaternion.identity) as GameObject;
-            laser.GetComponent<Rigidbody2D>().velocity = new Vector2(projectileSpeed, 0);
+            laser.GetComponent<Rigidbody2D>().velocity = new Vector2(projectileSpeed, 10);
 
 
             yield return new WaitForSeconds(projectileFiringPeriod);
