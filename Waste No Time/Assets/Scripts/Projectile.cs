@@ -30,7 +30,7 @@ public class Projectile : MonoBehaviour
             if (hitInfo.collider.CompareTag("Enemy"))
             {
                 Debug.Log("Enemy MUST TAKE DAMAGE!");
-                hitInfo.collider.GetComponent<Enemy>().TakeDamage(damage);
+                hitInfo.collider.GetComponent<Boss>().TakeDamage(damage);
             }
 
             DestroyProjectile();
