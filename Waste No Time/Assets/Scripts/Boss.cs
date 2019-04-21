@@ -17,14 +17,13 @@ public class Boss : MonoBehaviour
     private void Start()
     {
         anim = GetComponent<Animator>();
-       
+
     }
 
     // Update is called once per frame
     void Update()
     {
-  
-
+ 
         if (health <=25)
         {
             anim.SetTrigger("stageTwo");
@@ -36,12 +35,14 @@ public class Boss : MonoBehaviour
             Destroy(gameObject);
         }
 
+
         if (timeBtwDamage > 0)
         {
             timeBtwDamage -= Time.deltaTime;
         }
 
         healthBar.value = health;
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
