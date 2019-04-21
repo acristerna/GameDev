@@ -34,8 +34,9 @@ public class jumpBehavior : StateMachineBehaviour
             timer -= Time.deltaTime;
         }
 
-        //Vector2 target = new Vector2(playerPos.position.x, animator.transform.position.y);
-        //animator.transform.position = Vector2.MoveTowards(animator.transform.position, target, speed * Time.deltaTime);
+        // This makes the monster move toward the player
+        Vector2 target = new Vector2(playerPos.position.x, animator.transform.position.y);
+        animator.transform.position = Vector2.MoveTowards(animator.transform.position, target, speed * Time.deltaTime);
 
     }
 
