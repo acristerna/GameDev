@@ -10,11 +10,28 @@ public class PlayerMovement : MonoBehaviour
     float horizontalMove = 0f;
     bool jump = false;
     bool crouch = false;
-    
+
+    private float minX, maxX, minY, maxY;
+
+
+
+    private void Start()
+    {
+        float camDistance = Vector3.Distance(transform.position, Camera.main.transform.position);
+        Vector2 bottomCorner = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, camDistance));
+        Vector2 topCorner = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, camDistance));
+
+        minX = bottomCorner.x;
+        maxX = topCorner.x;
+        minY = bottomCorner.y;
+        maxY = topCorner.y;
+
+    }
 
     // Update is called once per frame
     void Update()
     {
+       
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
@@ -42,6 +59,13 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         // Move our character
+
+        //Debug.Log("hor");
+        //Debug.Log(horizontalMove);
+        //Debug.Log(transform.position.x);
+
+        //if(transform.position.x )
+
         controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
         jump = false;
 

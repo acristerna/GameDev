@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     private bool m_FacingRight = true;  // For determining which way the player is currently facing.
     private Vector3 m_Velocity = Vector3.zero;
 
+    private float minX, maxX, minY, maxY;
+
     [Header("Events")]
     [Space]
 
@@ -29,6 +31,18 @@ public class PlayerController : MonoBehaviour
 
     public BoolEvent OnCrouchEvent;
     private bool m_wasCrouching = false;
+
+    private void Start()
+    {
+        float camDistance = Vector3.Distance(transform.position, Camera.main.transform.position);
+        Vector2 bottomCorner = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, camDistance));
+        Vector2 topCorner = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, camDistance));
+
+        minX = bottomCorner.x;
+        maxX = topCorner.x;
+        minY = bottomCorner.y;
+        maxY = topCorner.y;
+    }
 
     private void Awake()
     {
@@ -106,11 +120,46 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-            // Move the character by finding the target velocity
+
             Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
-            // And then smoothing it out and applying it to the character
+            Vector3 newpos = transform.position + targetVelocity;
+
+            if(newpos.x + 7 < minX)
+            {
+                targetVelocity = new Vector2(move * 0, m_Rigidbody2D.velocity.y);
+            }
+
+            if(newpos.x - 7 > maxX)
+            {
+                targetVelocity = new Vector2(move * 0, m_Rigidbody2D.velocity.y);
+            }
+
+        
+
             m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 
+        
+
+            Debug.Log("newpos");
+            Debug.Log(newpos.x);
+
+            Debug.Log("min");
+            Debug.Log(minX);
+
+
+
+
+
+            // Move the character by finding the target velocity
+
+
+
+
+
+            // And then smoothing it out and applying it to the character
+
+            //Debug.Log("move");
+            //Debug.Log(move);
             // If the input is moving the player right and the player is facing left...
             if (move > 0 && !m_FacingRight)
             {
@@ -144,4 +193,5 @@ public class PlayerController : MonoBehaviour
         theScale.x *= -1;
         transform.localScale = theScale;
     }
+    
 }
