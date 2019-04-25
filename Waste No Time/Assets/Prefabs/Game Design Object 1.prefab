@@ -96,6 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   health: 100
+  scoreValue: 1
   speed: 4
   effect: {fileID: 1058715954, guid: ee8b56556e7277a4298c33abca9d0e8d, type: 3}
   explostionSound: {fileID: 2139053895026421481, guid: 6134c56a13ef1584e8d048f75143f400,
