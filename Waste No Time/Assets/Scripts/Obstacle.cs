@@ -10,7 +10,7 @@ public class Obstacle : MonoBehaviour
     public float speed;
 
     public GameObject effect;
-    public GameObject explostionSound;
+    public GameObject explosionSound;
 
     private void Update()
     {
@@ -21,9 +21,9 @@ public class Obstacle : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (explostionSound)
+            if (explosionSound)
             {
-                Instantiate(explostionSound, transform.position, Quaternion.identity);
+                Instantiate(explosionSound, transform.position, Quaternion.identity);
             }
             Instantiate(effect, transform.position, Quaternion.identity);
             // player takes damage !
@@ -39,6 +39,7 @@ public class Obstacle : MonoBehaviour
             FindObjectOfType<GameSession>().AddToScore(scoreValue);
             if (health <= 0)
             {
+                Instantiate(explosionSound, transform.position, Quaternion.identity);
                 Instantiate(effect, transform.position, Quaternion.identity);
 
                 Destroy(gameObject);

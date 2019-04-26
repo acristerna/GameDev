@@ -96,9 +96,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   health: 100
+  scoreValue: 1
   speed: 5
   effect: {fileID: 2826991298934289575, guid: e9148679d8c44ca4d945ef85680d55f2, type: 3}
-  explostionSound: {fileID: 2139053895026421481, guid: 6134c56a13ef1584e8d048f75143f400,
+  explosionSound: {fileID: 2139053895026421481, guid: 6134c56a13ef1584e8d048f75143f400,
     type: 3}
 --- !u!114 &6082972454664209092
 MonoBehaviour:
@@ -130,7 +131,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 23.88, y: 16.68}
+    oldSize: {x: 23.88, y: 16.685682}
     newSize: {x: 16.68, y: 23.88}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

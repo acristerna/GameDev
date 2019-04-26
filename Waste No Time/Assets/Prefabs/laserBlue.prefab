@@ -115,6 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c631df991ac4c4b73bfd15742a739f70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionSound: {fileID: 0}
   damage: 100
 --- !u!70 &7868820765995997476
 CapsuleCollider2D:

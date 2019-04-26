@@ -10,6 +10,7 @@ public class ProjectileEnemy : MonoBehaviour
     private Vector2 target;
 
     public GameObject destroyEffect;
+    public GameObject explosionSound;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,7 @@ public class ProjectileEnemy : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Instantiate(explosionSound, transform.position, Quaternion.identity);
             Instantiate(destroyEffect, transform.position, Quaternion.identity);
             other.GetComponent<PlayerAttackLv>().TakeDamage(damage);
             // Debug.Log(other.GetComponent<PlayerAttackLv>().health);

@@ -33,7 +33,7 @@ public class GameSession : MonoBehaviour
     public void ProgressScene(int currentScene)
     {
 
-        if(currentScene == 5)
+        if(currentScene == 7)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }

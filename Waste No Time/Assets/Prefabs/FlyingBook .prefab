@@ -99,5 +99,7 @@ MonoBehaviour:
   whatIsSolid:
     serializedVersion: 2
     m_Bits: 1536
+  explosionSound: {fileID: 2139053895026421481, guid: 6134c56a13ef1584e8d048f75143f400,
+    type: 3}
   destroyEffect: {fileID: 2826991298934289575, guid: e9148679d8c44ca4d945ef85680d55f2,
     type: 3}

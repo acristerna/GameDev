@@ -9,9 +9,9 @@ public class Projectile : MonoBehaviour
     public float distance;
     public int damage;
     public LayerMask whatIsSolid;
-    
 
 
+    public GameObject explosionSound;
     public GameObject destroyEffect;
 
     // Start is called before the first frame update
@@ -42,7 +42,8 @@ public class Projectile : MonoBehaviour
 
     void DestroyProjectile()
     {
-       Instantiate(destroyEffect, transform.position, Quaternion.identity);
+        Instantiate(explosionSound, transform.position, Quaternion.identity);
+        Instantiate(destroyEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

@@ -25,7 +25,7 @@ public class Boss : MonoBehaviour
 
         healthBar.value = health;
 
-        if (health <=25)
+        if (health <=8)
         {
             anim.SetTrigger("stageTwo");
         }
