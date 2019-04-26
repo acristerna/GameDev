@@ -5,9 +5,11 @@ using UnityEngine;
 public class ProjectileEnemy : MonoBehaviour
 {
     public float speed;
-
+    public int damage;
     private Transform player;
     private Vector2 target;
+
+    public GameObject destroyEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -23,13 +25,16 @@ public class ProjectileEnemy : MonoBehaviour
 
         if(transform.position.x == target.x && transform.position.y == target.y)
         {
-           DestroyProjectile();
+            DestroyProjectile();
         }
     }
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
+            Instantiate(destroyEffect, transform.position, Quaternion.identity);
+            other.GetComponent<PlayerAttackLv>().TakeDamage(damage);
+            Debug.Log(other.GetComponent<PlayerAttackLv>().health);
             DestroyProjectile();
         }
     }

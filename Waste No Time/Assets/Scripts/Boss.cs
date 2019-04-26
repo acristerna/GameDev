@@ -13,7 +13,6 @@ public class Boss : MonoBehaviour
     public Slider healthBar;
     private Animator anim;
 
-
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -23,7 +22,9 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
- 
+
+        healthBar.value = health;
+
         if (health <=25)
         {
             anim.SetTrigger("stageTwo");
@@ -34,14 +35,6 @@ public class Boss : MonoBehaviour
             Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
-
-
-        if (timeBtwDamage > 0)
-        {
-            timeBtwDamage -= Time.deltaTime;
-        }
-
-        healthBar.value = health;
 
     }
 
@@ -56,6 +49,7 @@ public class Boss : MonoBehaviour
             }
         }
     }
+
 
     public void TakeDamage(int damage)
     {
