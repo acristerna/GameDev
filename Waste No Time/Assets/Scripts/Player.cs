@@ -30,7 +30,11 @@ public class Player : MonoBehaviour
     {
        // Move();
         Fire();
-        healthDisplay.text = health.ToString() ;
+        if (healthDisplay)
+        {
+            healthDisplay.text = health.ToString();
+        }
+
 
         if (health <= 0)
         {
