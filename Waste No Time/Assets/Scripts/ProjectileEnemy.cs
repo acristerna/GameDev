@@ -34,7 +34,7 @@ public class ProjectileEnemy : MonoBehaviour
         {
             Instantiate(destroyEffect, transform.position, Quaternion.identity);
             other.GetComponent<PlayerAttackLv>().TakeDamage(damage);
-            Debug.Log(other.GetComponent<PlayerAttackLv>().health);
+            // Debug.Log(other.GetComponent<PlayerAttackLv>().health);
             DestroyProjectile();
         }
     }

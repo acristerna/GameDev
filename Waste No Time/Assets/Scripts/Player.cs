@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // Move();
+        // Move();
         Fire();
         if (healthDisplay)
         {
@@ -43,22 +43,22 @@ public class Player : MonoBehaviour
         }
         transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < maxHeight)
+        if ((Input.GetKeyDown(KeyCode.UpArrow) || (Input.GetKeyDown(KeyCode.W))) && transform.position.y < maxHeight)
         {
           targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minHeight)
+        else if ((Input.GetKeyDown(KeyCode.DownArrow) || (Input.GetKeyDown(KeyCode.S))) && transform.position.y > minHeight)
         {
             targetPos = new Vector2(transform.position.x, transform.position.y - Yincrement);
         }
 
         transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
 
-        if (Input.GetKeyDown(KeyCode.RightArrow) && transform.position.x < maxWidth)
+        if ((Input.GetKeyDown(KeyCode.RightArrow) || (Input.GetKeyDown(KeyCode.D))) && transform.position.x < maxWidth)
         {
             targetPos = new Vector2(transform.position.x + Xincrement, transform.position.y);
         }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow) && transform.position.x > minWidth)
+        else if ((Input.GetKeyDown(KeyCode.LeftArrow) || (Input.GetKeyDown(KeyCode.A))) && transform.position.x > minWidth)
         {
             targetPos = new Vector2(transform.position.x - Xincrement, transform.position.y);
         }

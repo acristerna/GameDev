@@ -5,19 +5,21 @@ using UnityEngine.UI;
 
 public class PlayerAttackLv : MonoBehaviour
 {
-    public float health;
+    public int health;
     public GameObject gameOver;
     public Slider healthBar;
 
     // Start is called before the first frame update
     void Start()
     {
-        healthBar.value = health;
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+        healthBar.value = health;
+
         if (health <= 0)
         {
             gameOver.SetActive(true);

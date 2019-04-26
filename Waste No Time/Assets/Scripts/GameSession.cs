@@ -33,7 +33,7 @@ public class GameSession : MonoBehaviour
     public void ProgressScene(int currentScene)
     {
 
-        if(currentScene == 1)
+        if(currentScene == 5)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
@@ -43,7 +43,7 @@ public class GameSession : MonoBehaviour
     public void AddToScore(int scoreValue)
     {
         score += scoreValue;
-        if(score > 25)
+        if(score >= 25)
         {
             int y = SceneManager.GetActiveScene().buildIndex;
             ProgressScene(y);
